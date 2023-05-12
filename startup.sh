@@ -2,4 +2,5 @@ wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2022.05-Lin
 
 conda create -y -n sd_trt python=3.10
 conda activate sd_trt
+pip install nvidia-pyindex
 pip install -r requirements.txt
