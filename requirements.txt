@@ -7,3 +7,4 @@ accelerate
 optimum
 onnxruntime
 onnx
+tensorrt
