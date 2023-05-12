@@ -8,3 +8,4 @@ optimum
 onnxruntime
 onnx
 tensorrt
+polygraphy
