@@ -8,4 +8,5 @@ optimum
 onnxruntime
 onnx
 tensorrt
+nvidia-pyindex
 polygraphy
