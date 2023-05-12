@@ -7,6 +7,7 @@ accelerate
 optimum
 onnxruntime
 onnx
-tensorrt
 nvidia-pyindex
 polygraphy
+onnx-graphsurgeon
+tensorrt
