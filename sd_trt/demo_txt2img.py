@@ -59,6 +59,8 @@ if __name__ == "__main__":
     if args.build_dynamic_shape or image_height > 512 or image_width > 512:
         max_batch_size = 4
 
+    max_batch_size = 1
+
     batch_size = len(prompt)
     if batch_size > max_batch_size:
         raise ValueError(f"Batch size {len(prompt)} is larger than allowed {max_batch_size}. If dynamic shape is used, then maximum batch size is 4")

@@ -1,2 +1,0 @@
-python demo_txt2img.py "a beautiful photograph of Mt. Fuji during cherry blossom" --denoising-steps 20 --height 512 --width 512 --num-warmup-runs 0 -v
-python demo_txt2img.py "a beautiful photograph of Mt. Fuji during cherry blossom" --denoising-steps 20 --height 512 --width 1024 --num-warmup-runs 0 -v

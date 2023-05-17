@@ -1,0 +1,1 @@
+python demo_txt2img.py "a beautiful girl" --denoising-steps 20 --seed 1
