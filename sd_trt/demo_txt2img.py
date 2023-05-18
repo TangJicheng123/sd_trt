@@ -78,7 +78,8 @@ if __name__ == "__main__":
         verbose=args.verbose,
         nvtx_profile=args.nvtx_profile,
         max_batch_size=max_batch_size,
-        use_cuda_graph=args.use_cuda_graph)
+        use_cuda_graph=args.use_cuda_graph,
+        guidance_scale=7.0)
 
     # Load TensorRT engines and pytorch modules
     torch.cuda.synchronize()

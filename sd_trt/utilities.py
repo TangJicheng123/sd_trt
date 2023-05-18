@@ -542,7 +542,7 @@ class EulerAncestralDiscreteScheduler():
         beta_start: float = 0.0001,
         beta_end: float = 0.02,
         device = 'cuda',
-        steps_offset = 0,
+        steps_offset = 1,
         prediction_type = "epsilon"
     ):
         # this schedule is very specific to the latent diffusion model.
@@ -627,12 +627,18 @@ class EulerAncestralDiscreteScheduler():
                 f"prediction_type given as {self.prediction_type} must be one of `epsilon`, or `v_prediction`"
             )
 
-        sigma_up = self.sigmas_up[idx]
+        # sigma_up = self.sigmas_up[idx]
+
+        sigma_from = self.sigmas[step_index]
+        sigma_to = self.sigmas[step_index + 1]
+        sigma_up = (sigma_to**2 * (sigma_from**2 - sigma_to**2) / sigma_from**2) ** 0.5
+        sigma_down = (sigma_to**2 - sigma_up**2) ** 0.5
 
         # 2. Convert to an ODE derivative
         derivative = (sample - pred_original_sample) / sigma
 
-        dt = self.dts[idx]
+        # dt = self.dts[idx]
+        dt = sigma_down - sigma
 
         prev_sample = sample + derivative * dt
 

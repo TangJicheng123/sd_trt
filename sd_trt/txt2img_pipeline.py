@@ -23,6 +23,8 @@ import tensorrt as trt
 from utilities import TRT_LOGGER
 from stable_diffusion_pipeline import StableDiffusionPipeline
 
+import numpy as np
+
 class Txt2ImgPipeline(StableDiffusionPipeline):
     """
     Application showcasing the acceleration of Stable Diffusion Txt2Img v1.4, v1.5, v2.0, v2.0-base, v2.1, v2.1-base pipeline using NVidia TensorRT w/ Plugins.
