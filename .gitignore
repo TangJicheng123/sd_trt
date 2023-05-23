@@ -5,6 +5,8 @@
 *.png
 *.jpg
 *.onnx
+*.plan
+*.trt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
