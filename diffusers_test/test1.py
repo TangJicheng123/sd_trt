@@ -1,8 +1,8 @@
 from diffusers import DiffusionPipeline, StableDiffusionPipeline
 from diffusers import EulerAncestralDiscreteScheduler
 
-from safetensors.torch import load_file
-import lora
+# from safetensors.torch import load_file
+# import lora
 import torch
 import time
 import numpy as np
@@ -11,7 +11,7 @@ model_id = "runwayml/stable-diffusion-v1-5"
 model_id = "/home/ec2-user/github/stable-diffusion-v1-5"
 model_id = "/home/ec2-user/github/sd_trt/sd_model/my_down"
 # pipeline = DiffusionPipeline.from_pretrained(model_id)
-model_id = "/home/ec2-user/github/sd_trt/vivid_paina"
+model_id = "/home/ec2-user/vivid_paina"
 pipeline = StableDiffusionPipeline.from_pretrained(model_id)
 
 # unet_prefix = "lora_unet"
@@ -33,8 +33,8 @@ text = "a good girl"
 text = "a sleep girl"
 neg = "ugly, bad face, fused hand, fused feet, worst quality, low quality, bad hands, missing fingers, weapon, sword, holding, text, signature"
 
-warmup_count = 10
-for i in range(10):
+warmup_count = 0
+for i in range(warmup_count):
     image = pipeline(prompt=text, negative_prompt=neg, guidance_scale=7.0, num_inference_steps=20, height=768, width=512, generator=torch.Generator(device="cuda").manual_seed(91652449)).images[0]
 
 torch.cuda.synchronize()

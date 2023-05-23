@@ -69,7 +69,7 @@ class Optimizer():
             return onnx_graph
 
 def get_path(version, inpaint=False):
-    return "/home/ec2-user/github/sd_trt/vivid_paina"
+    return "/home/ec2-user/vivid_paina"
     if version == "1.4":
         if inpaint:
             return "runwayml/stable-diffusion-inpainting"

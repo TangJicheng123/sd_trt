@@ -18,12 +18,17 @@ image = image[:, :, None]
 image = np.concatenate([image, image, image], axis=2)
 canny_image = Image.fromarray(image)
 
+canny_image.save("./canny.jpg")
+
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel
 import torch
 
 controlnet = ControlNetModel.from_pretrained("lllyasviel/sd-controlnet-canny", torch_dtype=torch.float16)
+
+model_path = "runwayml/stable-diffusion-v1-5"
+model_path = "/home/ec2-user/vivid_paina"
 pipe = StableDiffusionControlNetPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5", controlnet=controlnet, torch_dtype=torch.float16
+    model_path, controlnet=controlnet, torch_dtype=torch.float16
 )
 
 from diffusers import UniPCMultistepScheduler
